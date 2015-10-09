@@ -19,7 +19,7 @@ public class CotxeMaps {
 		//Auto-generated method stub
 		//
 		SortedMap <String, Cotxe> mapa = new TreeMap<String, Cotxe>();
-		//
+		//Afegim els 8 objectes
 		mapa.put("1234 AAA", new Cotxe("Alfa Romeo", "Giulia", 2900, 6));
 		mapa.put("2321 BBB", new Cotxe("Seat", "Ibiza", 1200, 3));
 		mapa.put("8232 FFF", new Cotxe("Ford", "Focus", 2000, 4));
@@ -29,15 +29,16 @@ public class CotxeMaps {
 		mapa.put("9234 BHG", new Cotxe("Hyundai", "Santa Fe", 3000, 6));
 		mapa.put("9216 CKK", new Cotxe("Hyundai", "Accent", 2900, 4));
 		
-		Cotxe añadido = new Cotxe();
-		añadido = mapa.put("9216 CKK", new Cotxe("Alfa Romeo", "Giulia", 2900, 6));
-		if(añadido == null){
-			System.out.println("se puede");
+		Cotxe afegit = new Cotxe();
+		afegit = mapa.put("9216 CKK", new Cotxe("Alfa Romeo", "Giulia", 2900, 6));
+		//si s'ha pogut afegir retorna null sino retorna un altre valor
+		if(afegit == null){
+			System.out.println("sí s'ha afegit un duplicat");
 		} else {
-			System.out.println("no se puede");
+			System.out.println("no s'ha afegit un duplicat");
 		}
 		for(Map.Entry<String, Cotxe> entry : mapa.entrySet()){
-			System.out.println(entry.getKey() + "=>" + entry.getValue());
+			System.out.println(entry.getKey() + " / " + entry.getValue());
 		}
 }
 }
